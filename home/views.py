@@ -134,6 +134,9 @@ def custom_review(req,cat):
                 image = ''  
             obj = Electronic_Review(name=name, mail = email,category = category,brand=brand,product=product,rating=rating,review=review,image=image)
             obj.save()
+            return redirect('/getproducts/'+str(brand),{
+                    'create' : 'success'
+                })
         else:
                 name= req.POST['name']
                 email= req.POST['email']
@@ -148,9 +151,9 @@ def custom_review(req,cat):
                     image = ''  
                 obj = Place_Review(name=name, mail = email,category = category,city=city,place=place,rating=rating,review=review,image=image)
                 obj.save()
-        return redirect('/review',{
-            'create' : 'success'
-        })
+                return redirect('/getplaces/'+str(place),{
+                    'create' : 'success'
+                })
 def BrandCreatePopup(request):
 	form = BrandForm(request.POST or None)
 	if form.is_valid():
