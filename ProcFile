@@ -1,0 +1,1 @@
+web: gunicorn Verdict.wsgi --log-file -
