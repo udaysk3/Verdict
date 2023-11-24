@@ -1,1 +1,1 @@
-web: gunicorn Verdict.wsgi --log-file -
+web: gunicorn verdict.wsgi --log-file -
