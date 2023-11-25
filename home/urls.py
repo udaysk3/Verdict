@@ -22,4 +22,6 @@ urlpatterns = [
         path('places/', views.places,name='places'),
         path('getproducts/<str:brand>/',views.getproducts),
         path('getplaces/<str:city>/',views.getplaces),
-]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+urlpatterns +=  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns +=  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
