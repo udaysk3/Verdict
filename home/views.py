@@ -192,7 +192,7 @@ def RecentReview(req,num_posts):
         # print(num_posts)
         lower = upper - 3
         elec = list(Electronic_Review.objects.all().order_by('-id').values()[lower:upper])
-        print(elec)
+        # print(elec)
         place= list(Place_Review.objects.all().order_by('-id').values()[lower:upper])
         brands = list(Brand.objects.all())
         products = list(Product.objects.all())
@@ -251,7 +251,7 @@ def getproducts(req, brand):
                 s += j.rating
                 count+=1
             prod_avg_rating[name]  = round(s/count,1)
-            print(prod_avg_rating)
+            # print(prod_avg_rating)
             for k in item:
                 reviews.append(k)
     # print(list(reviews))
@@ -282,7 +282,7 @@ def getplaces(req, city):
                 j.image  = 'images/'+str(j.image) 
                 s += j.rating
                 count+=1
-            print(item)
+            # print(item)
             place_avg_rating[name]  = round(s/count,1)
             for k in item:
                 reviews.append(k)
